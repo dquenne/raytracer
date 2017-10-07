@@ -1,0 +1,25 @@
+WARN   = -W -Wall
+OPT    = -O2
+#OPT    = -DNDEBUG -O3 -funroll-loops --fast-math -mtune=pentium4 -mfpmath=sse -msse2
+CPPFLAGS = $(OPT) $(WARN)
+ARCH := $(shell arch)
+IMLIB = libImg.$(ARCH).a
+
+SRC = Convert.cpp Convolve.cpp Image.cpp ImageIO.cpp ImageIOpng.cpp RefCntMem.cpp
+OBJ    = $(SRC:.cpp=.o)
+
+libImg.$(ARCH).a: $(OBJ)
+	rm -f libImg.$(ARCH).a
+	ar ruc libImg.$(ARCH).a $(OBJ)
+	ranlib libImg.$(ARCH).a
+
+clean: 
+	rm -f $(OBJ)
+
+allclean: clean
+	rm -f libImg*.a
+
+zip:
+	cd .. ;	rm -f imageLib.zip ; zip imageLib.zip \
+	imageLib/README.txt imageLib/Makefile \
+	imageLib/*cpp imageLib/*h

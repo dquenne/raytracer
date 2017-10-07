@@ -1,0 +1,31 @@
+# width height
+600 600
+
+# camera x, y, z, angle
+0.0 0.0 0.0 0.0
+
+# scene name
+abc
+
+# lighting x, y, z
+1.0 2.0 2.0
+
+
+# type
+# [0: plane] x y z  nx ny nz r g b reflectivity
+# [1: sphere] x y z  radius  r g b reflectivity
+# [2: tri]   x1 y1 z1  x2 y2 z2  x3 y3 z3 r g b reflectivity
+
+# plane
+0  0.0 -0.5 0.0  0 1 0  0 0.6 0.9  1.0
+
+# sphere
+1  0.5 0.1 -1.5  0.2  0.7 0.1 0.8  1.0
+# sphere2
+1  -0.6 -0.18 -1.5  0.2  1.0 1.0 1.0  0.0
+
+# triangle
+#2  0.3 0.3 -1.5  0.1 -0.1 -1.6  0.5 -0.1 -1.6  0.3 0.6 1.0  1.0
+
+# .obj file
+3 dragon.obj 0.5 0.7 1.0  1.2
